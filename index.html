@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/7322684d64.js" crossorigin="anonymous"></script>
+    <title>API Peliculas</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>    
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <img class="navbar-brand" id="navIcon" src="./img/icon.png"/>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <input class="form-control mr-sm-2 " type="text" id="name" placeholder="Nombre" required>
+          <input class="form-control mr-sm-2" type="text" placeholder="Año de grabacion" type="text" id="year"/>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="mostrarPortadas()">Buscar</button>
+      </div>
+    </nav>
+    <div id="movies" class="row">
+    </div>
+    <div class="d-flex align-items-center justify-content-center">
+      <div class="spinner-border text-success" style="display: none;" id="carga" role="status">
+        <span class="sr-only">Cargando...</span>
+      </div>
+    </div>
+    <div class="modal" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalTitle">Modal title</h5>
+            <button type="button" class="close" id="cerrar" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body row">
+            <div id="divImagen" class="col-12 col-md-5">
+                <img id="img"></img>
+            </div>
+            <div id="descripcion" class="col-12 col-md-7">
+              <label><strong>Genre</strong></label>
+              <p id="genre"></p>
+              <label><strong>Release</strong></label>
+              <p id="release"></p>
+              <label><strong>Director</strong></label>
+              <p id="director"></p>
+              <label><strong>Writer</strong></label>
+              <p id="writer"></p>
+              <label><strong>Actors</strong></label>
+              <p id="actors"></p>
+              <label><strong>Plot</strong></label>
+              <p id="plot"></p>
+              <label><strong>Rating</strong></label>
+              <div>
+                <i id="star1" class="far fa-star"></i>
+                <i id="star2" class="far fa-star"></i>
+                <i id="star3" class="far fa-star"></i>
+                <i id="star4" class="far fa-star"></i>
+                <i id="star5" class="far fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/main.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
